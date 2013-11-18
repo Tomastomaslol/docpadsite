@@ -14,6 +14,7 @@ head
 		|Your title here.
 	meta(name="description", content="")
 	meta(name="viewport", content="width=device-width, initial-scale=1")
+	link(href='http://fonts.googleapis.com/css?family=Luckiest+Guy', rel='stylesheet', type='text/css')
 	//Place favicon.ico and apple-touch-icon.png in the root directory
 	!= getBlock('meta').add(site.meta).toHTML()
 	!= getBlock("styles").add(site.styles).toHTML()
@@ -28,7 +29,14 @@ body
 			a(href="http://browsehappy.com/")
 				|upgrade your browser
 			|to improve your experience.
-	!= content
+	section.wrap
+		h1.pagetitle Hello World!
+		ul.menu
+			li
+				a(href="/") Homes
+			li
+				a(href="/about.html") About
+		!= content
 	script.
 		window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
 	!= getBlock('scripts').add(site.scripts, {defer:false}).toHTML()
